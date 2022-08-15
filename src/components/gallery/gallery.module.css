@@ -1,0 +1,10 @@
+.gallery {
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    justify-content: center;
+    overflow: hidden;
+    grid-gap: 25px;
+}
+

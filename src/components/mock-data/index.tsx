@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import {ContextMockItems} from '../contexts/DragItemsContext';
-import {DragItem, items} from '../__mock__';
+import {ContextMockItems} from '../../contexts/DragItemsContext';
+import {DragItem, items} from '__mock__';
 
 interface Props {
     children: React.ReactNode;

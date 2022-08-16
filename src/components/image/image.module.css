@@ -1,8 +1,6 @@
 .imageItem {
     position: relative;
     object-fit: cover;
-    width: 100%;
-    max-width: 140px;
     height: 140px;
     background: center / cover no-repeat;
     cursor: grab;
@@ -11,5 +9,4 @@
 .imageItem:first-child {
     grid-column: 1/5;
     height: 300px;
-    width: 100%;
 }

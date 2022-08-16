@@ -1,35 +1,44 @@
-import React from 'react';
+import React, {useMemo, useState } from 'react';
 
 import {
-    closestCorners,
     rectIntersection,
     DndContext,
     DragStartEvent,
-    DragOverEvent,
     DragEndEvent,
     useSensors,
     useSensor,
+    PointerSensor,
     MouseSensor,
     TouchSensor,
-    ScreenReaderInstructions,
-    Announcements,
 } from '@dnd-kit/core';
-import { arrayMove } from '@dnd-kit/sortable';
+
+import {arrayMove, rectSortingStrategy, SortableContext} from '@dnd-kit/sortable';
 
 import { useMockData } from '../../hooks/useMockData';
 import { DragItem } from '../../__mock__';
-import Gallery from '../../components/Gallery';
+import { snapCenterToCursor } from '@dnd-kit/modifiers';
+import Gallery from 'components/gallery';
+import { SortableImage } from '../../components/image';
+
 
 
 const Example1: React.FC = () => {
 
     const {dragItems, setDragItems} = useMockData();
-    const sensors = useSensors(useSensor(MouseSensor), useSensor(TouchSensor));
+    const sensors = useSensors(
+        useSensor(MouseSensor),
+        useSensor(TouchSensor),
+        useSensor(PointerSensor),
+    );
+    const [activeId, setActiveId] = useState<string>('');
 
-    function handleDragStart(event: DragStartEvent, ...rest: any) {
-        console.log(event);
-        console.log('rest = .> ', );
+    const dragIndex = useMemo(() => dragItems.findIndex((itm) => itm.id === activeId), [dragItems, activeId]);
 
+
+
+
+    function handleDragStart(event: DragStartEvent & { active: { id: string }  }, ...rest: any) {
+        setActiveId(event.active.id);
         // @ts-ignore
         const index = event.active.data.current.sortable.index;
         console.log(index);
@@ -48,25 +57,7 @@ const Example1: React.FC = () => {
                      newIndex = items.findIndex((itm) => itm.id === over.id);
                 }
 
-                // @ts-ignore
-                return arrayMove(items, oldIndex, newIndex);
-            });
-        }
-    }
-
-    function handleDragOver(event: DragOverEvent) {
-        const {active, over} = event;
-
-        if (active.id !== over?.id) {
-            setDragItems((items: DragItem[]) => {
-
-                let oldIndex;
-                let newIndex;
-
-                if ( typeof active.id === 'string' && typeof over?.id === 'string') {
-                    oldIndex = items.findIndex((itm) => itm.id === active.id);
-                    newIndex = items.findIndex((itm) => itm.id === over.id);
-                }
+                setActiveId('');
 
                 // @ts-ignore
                 return arrayMove(items, oldIndex, newIndex);
@@ -74,6 +65,9 @@ const Example1: React.FC = () => {
         }
     }
 
+    function handleDragCancel() {
+        setActiveId('');
+    }
 
     return (
             <div style={{
@@ -85,12 +79,31 @@ const Example1: React.FC = () => {
                     margin: '0 auto',
                 }}>
                     <DndContext
-                        collisionDetection={rectIntersection}
                         onDragStart={handleDragStart}
                         onDragEnd={handleDragEnd}
+                        onDragCancel={handleDragCancel}
                         sensors={sensors}
+                        collisionDetection={rectIntersection}
+                        modifiers={dragIndex === 0 ? [snapCenterToCursor] : []}
                     >
-                        <Gallery />
+                        <Gallery>
+                            <SortableContext items={dragItems} strategy={rectSortingStrategy}>
+                                {
+                                    dragItems.map((dragItem, index) => (
+                                        <SortableImage
+                                            id={dragItem.id}
+                                            index={index}
+                                            key={dragItem.id}
+                                            img={dragItem.img}
+                                        />))
+                                }
+                            </SortableContext>
+                        </Gallery>
+{/*                        <DragOverlay adjustScale={true} zIndex={5}>
+                            {activeId ? (
+                                <Photo img={dragItems[dragIndex].img} index={dragIndex} />
+                            ) : null}
+                        </DragOverlay>*/}
                     </DndContext>
                 </div>
 
@@ -99,3 +112,4 @@ const Example1: React.FC = () => {
 };
 
 export default Example1;
+

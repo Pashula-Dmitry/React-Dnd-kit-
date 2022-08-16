@@ -1,25 +1,27 @@
 import React from 'react';
-import styles from './image/image.module.css';
+import styles from 'components/image/image.module.css';
 import { useSortable } from '@dnd-kit/sortable';
 import {CSS} from '@dnd-kit/utilities';
 
 
 type Props = {
  img: string,
- alt: string;
  id: string;
+ index: number;
 };
 
 
-export const Image: React.FC<Props> = (props: Props) => {
-    const { img, alt, id} = props;
+export const SortableImage: React.FC<Props> = (props: Props) => {
+    const { img, id} = props;
 
     const {
         attributes,
         listeners,
         setNodeRef,
         transform,
-        transition
+        transition,
+        index,
+        isDragging,
     } = useSortable({id});
 
     const imgStyles = {
@@ -28,6 +30,9 @@ export const Image: React.FC<Props> = (props: Props) => {
         transform: CSS.Translate.toString(transform),
         transition,
         backgroundImage: `url(${img})`,
+        ...((isDragging || index !== 0)  && { height: '140px' }),
+        ...(isDragging && index === 0 ? { gridColumn: '1 / 2' } : null),
+        ...(isDragging && {zIndex: 9999})
     };
 
     return (
@@ -35,8 +40,8 @@ export const Image: React.FC<Props> = (props: Props) => {
             ref={setNodeRef}
             className={styles.imageItem}
             style={imgStyles}
-        {...listeners}
-        {...attributes}
+            {...listeners}
+            {...attributes}
         >
         </div>
     );

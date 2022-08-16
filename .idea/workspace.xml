@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="58266927-35d5-409d-a9dd-fe951f8618e9" name="Changes" comment="" />
+    <list default="true" id="58266927-35d5-409d-a9dd-fe951f8618e9" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/src/components/container/container.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/gallery/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/header/header.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/photo/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/container/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Draggable.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Gallery.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Image.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/image/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NoMatch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/no-match/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Routres.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/routes/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WrappedData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mock-data/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/gallery/gallery.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/gallery/gallery.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/image/image.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/image/image.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/example1/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/example1/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,14 +31,14 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
         <option value="CSS File" />
-        <option value="TypeScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/my-app" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -33,7 +54,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/38098/Desktop/dnd-example/src/components/image",
+    "last_opened_file_path": "C:/Users/38098/Desktop/dnd-example/src/components/header",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -45,15 +66,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\38098\Desktop\dnd-example\src\components\header" />
       <recent name="C:\Users\38098\Desktop\dnd-example\src\components\image" />
       <recent name="C:\Users\38098\Desktop\dnd-example\my-app\src\assets\imgs" />
       <recent name="C:\Users\38098\Desktop\dnd-example\my-app\src\components" />
       <recent name="C:\Users\38098\Desktop\dnd-example\my-app\src\pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\38098\Desktop\dnd-example\my-app\src\components" />
-      <recent name="C:\Users\38098\Desktop\dnd-example\my-app\src\components\Gallery" />
-      <recent name="C:\Users\38098\Desktop\dnd-example\my-app\src\assets\imgs" />
+      <recent name="C:\Users\38098\Desktop\dnd-example\src\components\mock-data" />
+      <recent name="C:\Users\38098\Desktop\dnd-example\src\components\routes" />
+      <recent name="C:\Users\38098\Desktop\dnd-example\src\components\photo" />
+      <recent name="C:\Users\38098\Desktop\dnd-example\src\components\no-match" />
+      <recent name="C:\Users\38098\Desktop\dnd-example\src\components\Header" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
@@ -93,8 +117,16 @@
       <option name="presentableId" value="Default" />
       <updated>1660545295610</updated>
       <workItem from="1660545299361" duration="25299000" />
-      <workItem from="1660576433720" duration="7428000" />
+      <workItem from="1660576433720" duration="36531000" />
     </task>
+    <task id="LOCAL-00001" summary="init">
+      <created>1660588387420</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1660588387420</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,5 +142,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
   </component>
 </project>

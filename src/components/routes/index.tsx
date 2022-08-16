@@ -1,9 +1,9 @@
 import React from 'react';
 import {useRoutes} from 'react-router-dom';
-import Example1 from '../pages/example1';
-import Example2 from '../pages/example2';
-import Example3 from '../pages/example3';
-import { NoMatch } from './NoMatch';
+import Example1 from '../../pages/example1';
+import Example2 from '../../pages/example2';
+import Example3 from '../../pages/example3';
+import { NoMatch } from 'components/no-match';
 
 const Routes: React.FC = () => {
 

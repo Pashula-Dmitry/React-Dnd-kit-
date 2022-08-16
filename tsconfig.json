@@ -7,23 +7,6 @@
       "esnext"
     ],
     "baseUrl": "./src",
-    "paths": {
-      "@components/*": [
-        "components/*"
-      ],
-      "@pages/*": [
-        "pages/*"
-      ],
-      "@hooks/*": [
-        "hooks/*"
-      ],
-      "@types/*": [
-        "types/*"
-      ],
-      "@contexts/*": [
-        "./contexts/*"
-      ]
-    },
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,

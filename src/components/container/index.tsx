@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './container.module.css';
 
 interface Props {
     children: React.ReactNode;
@@ -8,11 +9,7 @@ interface Props {
 const Container: React.FC<Props> = ({children}: Props) => {
 
     return (
-        <div className={'container'} style={{
-            maxWidth: '1140px',
-            margin: '150px auto',
-            height: '100%',
-        }}>
+        <div className={styles.container}>
             {children}
         </div>
     );

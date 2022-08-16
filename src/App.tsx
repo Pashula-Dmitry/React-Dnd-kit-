@@ -1,10 +1,10 @@
-import React, {FC} from 'react';
-import Routes from './components/Routres';
-import Header from './components/Header';
-import Container from './components/Container';
-import WrappedData from './components/WrappedData';
+import React from 'react';
+import Routes from 'components/routes';
+import Header from 'components/header';
+import Container from 'components/container';
+import WrappedData from 'components/mock-data';
 
-const App: FC = () => {
+const App: React.FC = () => {
     return (
         <div className={'app'} style={{
             minHeight: '100vh',
@@ -12,7 +12,7 @@ const App: FC = () => {
             <Header/>
             <Container>
                 <WrappedData>
-                    <Routes/>
+                  <Routes/>
                 </WrappedData>
             </Container>
         </div>

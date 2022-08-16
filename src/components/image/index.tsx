@@ -27,6 +27,7 @@ export const SortableImage: React.FC<Props> = (props: Props) => {
     const imgStyles = {
         borderRadius: '8px',
         WebkitUserDrag: 'none',
+        touchAction: 'none',
         transform: CSS.Translate.toString(transform),
         transition,
         backgroundImage: `url(${img})`,
